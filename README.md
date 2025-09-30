@@ -1,4 +1,4 @@
-[Jump to Spanish](https://github.com/0xp3/AFJP-Aptos/tree/main?tab=readme-ov-file#afjp-cripto---sistema-de-jubilaci%C3%B3n-basado-en-criptomonedas)
+[Jump to Spanish](https://github.com/0xp3/AFJP-Hedera/tree/main?tab=readme-ov-file#afjp-cripto---sistema-de-jubilaci%C3%B3n-basado-en-criptomonedas)
 # AFJP Cripto ‒ Cryptocurrency-Based Retirement System
 
 ## Introduction  
@@ -82,7 +82,7 @@ AFJP Cripto presents an innovative model for a retirement system using blockchai
 - **Styling**: Tailwind CSS
 - **State Management**: React Query + Context API
 - **Routing**: React Router DOM
-- **Blockchain Integration**: Aptos SDK
+- **Blockchain Integration**: Hedera SDK
 - **Build Tool**: Vite
 - **Package Manager**: npm/yarn
 
@@ -100,11 +100,11 @@ AFJP Cripto presents an innovative model for a retirement system using blockchai
 
 
 ### Blockchain
-- **Platform**: Aptos Blockchain
+- **Platform**: Hedera Blockchain
 - **Language**: Move
-- **Development**: Aptos CLI
+- **Development**: Hedera CLI
 - **Testing**: Move unit tests
-- **Deployment**: Aptos devnet/mainnet
+- **Deployment**: Hedera devnet/mainnet
 
 
 ### Infrastructure
@@ -220,7 +220,7 @@ AFJP Cripto presenta un modelo innovador de sistema de jubilación que utiliza t
 - **Estilos**: Tailwind CSS
 - **Gestión de estado**: React Query + Context API
 - **Ruteo**: React Router DOM
-- **Integración blockchain**: Aptos SDK
+- **Integración blockchain**: Hedera SDK
 - **Herramienta de build**: Vite
 - **Gestor de paquetes**: npm/yarn
 
@@ -236,11 +236,11 @@ AFJP Cripto presenta un modelo innovador de sistema de jubilación que utiliza t
 - **Testing**: Jest + Supertest
 
 ### Blockchain
-- **Plataforma**: Aptos Blockchain
+- **Plataforma**: Hedera Blockchain
 - **Lenguaje**: Move
-- **Desarrollo**: Aptos CLI
+- **Desarrollo**: Hedera CLI
 - **Pruebas**: Tests unitarios Move
-- **Despliegue**: devnet/mainnet Aptos
+- **Despliegue**: devnet/mainnet Hedera
 
 ### Infraestructura
 - **Proveedor cloud**: AWS/Azure/GCP
