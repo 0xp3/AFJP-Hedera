@@ -22,14 +22,15 @@ const QRPaymentBenefit: React.FC = () => {
   const { t } = useLanguage();
   
   // Mock user data
-  const juventudBalance = 450;
+  const juventudBalance = 2500;
   const tokenValue = 25; // USD per JUVENTUD token
-  const usdToPesos = 1200; // Tasa de cambio USD a pesos argentinos
+  const usdToPesos = 1450; // Tasa de cambio USD a pesos argentinos
   
   // Calculate discount and tokens needed
   const originalAmountInput = parseFloat(paymentAmount) || 0;
   // Convert to USD if input is in ARS
   const originalAmountUSD = currency === 'ARS' ? originalAmountInput / usdToPesos : originalAmountInput;
+  const originalAmountARS = currency === 'USD' ? originalAmountInput * usdToPesos : originalAmountInput;
   const discountAmountUSD = originalAmountUSD * (discountPercentage / 100);
   const finalAmountUSD = originalAmountUSD - discountAmountUSD;
   const tokensNeeded = Math.ceil(discountAmountUSD / tokenValue);
@@ -180,7 +181,7 @@ const QRPaymentBenefit: React.FC = () => {
             className="flex-1"
           >
             <QrCode className="mr-2 h-4 w-4" />
-            Pagar con QR
+            {t('qr-pay')}
           </Button>
           <Button 
             onClick={() => {setShowTransfer(true); setShowQR(false);}}
@@ -188,7 +189,7 @@ const QRPaymentBenefit: React.FC = () => {
             className="flex-1"
           >
             <Send className="mr-2 h-4 w-4" />
-            Transferir
+            {t('qr-transfer')}
           </Button>
         </div>
         
@@ -197,7 +198,7 @@ const QRPaymentBenefit: React.FC = () => {
           <div className="space-y-4">
             {/* Currency Toggle */}
             <div className="space-y-2">
-              <Label>Moneda para Visualización</Label>
+              <Label>{t('qr-token')}</Label>
               <div className="flex gap-2">
                 <Button
                   variant={currency === 'USD' ? "default" : "outline"}
@@ -219,7 +220,7 @@ const QRPaymentBenefit: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="payment-amount">Monto a Pagar ({currency})</Label>
+              <Label htmlFor="payment-amount">{t('qr-amount')} ({currency})</Label>
               <Input
                 id="payment-amount"
                 type="number"
@@ -231,7 +232,12 @@ const QRPaymentBenefit: React.FC = () => {
               />
               {currency === 'ARS' && originalAmountInput > 0 && (
                 <p className="text-xs text-muted-foreground">
-                  Equivale a ${originalAmountUSD.toFixed(2)} USD
+                  {t('qr-equals-final')} ${originalAmountUSD.toFixed(2)} USD
+                </p>
+              )}
+              {currency === 'USD' && originalAmountInput > 0 && (
+                <p className="text-xs text-muted-foreground">
+                  {t('qr-equals-final')} ${originalAmountARS.toFixed(2)} ARS
                 </p>
               )}
             </div>
