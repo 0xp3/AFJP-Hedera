@@ -243,7 +243,7 @@ const QRPaymentBenefit: React.FC = () => {
             </div>
             
             <div className="space-y-2">
-              <Label>Descuento Disponible</Label>
+              <Label>{t('qr-discount')}:</Label>
               <div className="flex gap-2">
                 {[10, 15, 20, 25].map((percentage) => (
                   <Button
@@ -264,22 +264,22 @@ const QRPaymentBenefit: React.FC = () => {
               <Card className="bg-muted/20">
                 <CardContent className="p-4 space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span>Monto Original:</span>
+                    <span>{t('qr-original')}:</span>
                     <span>${originalAmountDisplay.toFixed(currency === 'USD' ? 2 : 0)} {currency}</span>
                   </div>
                   <div className="flex justify-between text-sm text-green-600">
                     <span className="flex items-center gap-1">
                       <Minus className="h-3 w-3" />
-                      Descuento ({discountPercentage}%):
+                      {t('qr-disc')} ({discountPercentage}%):
                     </span>
                     <span>-${discountAmountDisplay.toFixed(currency === 'USD' ? 2 : 0)} {currency}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span>Tokens Necesarios:</span>
+                    <span>{t('qr-required')}:</span>
                     <span className="font-medium">{tokensNeeded} JUVENTUD</span>
                   </div>
                   <div className="border-t pt-2 flex justify-between font-bold">
-                    <span>Total a Pagar:</span>
+                    <span>{t('qr-total')}:</span>
                     <span className="text-green-600">${finalAmountDisplay.toFixed(currency === 'USD' ? 2 : 0)} {currency}</span>
                   </div>
                 </CardContent>
@@ -292,14 +292,14 @@ const QRPaymentBenefit: React.FC = () => {
               disabled={!paymentAmount || originalAmountUSD <= 0 || tokensNeeded > juventudBalance}
             >
               <QrCode className="mr-2 h-4 w-4" />
-              Generar Código QR
+              {t('qr-mint')}
             </Button>
           </div>
         ) : showTransfer ? (
           /* Transfer Form */
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="transfer-amount">Cantidad de Tokens a Transferir</Label>
+              <Label htmlFor="transfer-amount">{t('transfer-amount')}</Label>
               <Input
                 id="transfer-amount"
                 type="number"
@@ -313,13 +313,13 @@ const QRPaymentBenefit: React.FC = () => {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="recipient-address">Dirección de Destino</Label>
+              <Label htmlFor="recipient-address">{t('transfer-address')}</Label>
               <Input
                 id="recipient-address"
                 type="text"
                 value={recipientAddress}
                 onChange={(e) => setRecipientAddress(e.target.value)}
-                placeholder="0x... o dirección del destinatario"
+                placeholder={t('transfer-address-sub')}
               />
             </div>
             
@@ -328,19 +328,19 @@ const QRPaymentBenefit: React.FC = () => {
               <Card className="bg-muted/20">
                 <CardContent className="p-4 space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span>Tokens a Transferir:</span>
+                    <span>{t('transfer-final-amount')}:</span>
                     <span className="font-medium">{transferAmount} JUVENTUD</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span>Valor en USD:</span>
+                    <span>{t('transfer-final-usd')}:</span>
                     <span>${(parseFloat(transferAmount) * tokenValue).toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span>Valor en ARS:</span>
+                    <span>{t('transfer-final-ars')}:</span>
                     <span>${((parseFloat(transferAmount) * tokenValue * usdToPesos)).toLocaleString()}</span>
                   </div>
                   <div className="border-t pt-2 flex justify-between text-sm">
-                    <span>Saldo Restante:</span>
+                    <span>{t('transfer-final-balance')}:</span>
                     <span className="font-medium">{juventudBalance - parseFloat(transferAmount)} JUVENTUD</span>
                   </div>
                 </CardContent>
@@ -373,13 +373,13 @@ const QRPaymentBenefit: React.FC = () => {
               <CardContent className="p-4">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <CheckCircle2 className="h-5 w-5 text-green-500" />
-                  <span className="font-semibold text-green-700">Código QR Activo</span>
+                  <span className="font-semibold text-green-700">{t('qr-active')}</span>
                 </div>
                 <p className="text-sm text-center text-green-600">
-                  Total a pagar: ${finalAmountDisplay.toFixed(currency === 'USD' ? 2 : 0)} {currency} usando {tokensNeeded} tokens JUVENTUD
+                  {t('qr-active-total')}: ${finalAmountDisplay.toFixed(currency === 'USD' ? 2 : 0)} {currency} {t('qr-active-total-mid')} {tokensNeeded} {t('qr-active-total-last')}
                   <br />
                   <span className="text-xs">
-                    Equivale a ${finalAmountUSD.toFixed(2)} USD - ${(finalAmountUSD * usdToPesos).toLocaleString()} ARS
+                    ${finalAmountUSD.toFixed(2)} USD {t('qr-active-equals')} ${(finalAmountUSD * usdToPesos).toLocaleString()} ARS
                   </span>
                 </p>
               </CardContent>
@@ -407,19 +407,19 @@ const QRPaymentBenefit: React.FC = () => {
         
         {/* Benefits List */}
         <div className="border-t pt-4">
-          <h4 className="font-medium mb-3">Beneficios de los Tokens JUVENTUD</h4>
+          <h4 className="font-medium mb-3">{t('benefits-title')}Beneficios de los Tokens JUVENTUD</h4>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
-              <Badge className="bg-green-100 text-green-700">QR Payments</Badge>
-              <span>Descuentos automáticos del 10% al 25%</span>
+              <Badge className="bg-green-100 text-green-700">{t('benefits-div-first')}QR Payments</Badge>
+              <span>{t('benefits-div-first-span')}Descuentos automáticos del 10% al 25%</span>
             </li>
             <li className="flex items-center gap-2">
-              <Badge className="bg-blue-100 text-blue-700">Transferencias</Badge>
-              <span>Envío instantáneo a otros usuarios</span>
+              <Badge className="bg-blue-100 text-blue-700">{t('benefits-div-second')}Transferencias</Badge>
+              <span>{t('benefits-div-second-span')}Envío instantáneo a otros usuarios</span>
             </li>
             <li className="flex items-center gap-2">
-              <Badge className="bg-purple-100 text-purple-700">Seguridad</Badge>
-              <span>Transacciones protegidas por blockchain</span>
+              <Badge className="bg-purple-100 text-purple-700">{t('benefits-div-third')}Seguridad</Badge>
+              <span>{t('benefits-div-third-span')}Transacciones protegidas por blockchain</span>
             </li>
           </ul>
         </div>
