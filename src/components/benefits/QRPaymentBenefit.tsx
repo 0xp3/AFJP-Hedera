@@ -6,6 +6,8 @@ import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { QrCode, Coins, CheckCircle2, Minus, DollarSign, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 
 const QRPaymentBenefit: React.FC = () => {
   const [paymentAmount, setPaymentAmount] = useState<string>('');
@@ -17,6 +19,7 @@ const QRPaymentBenefit: React.FC = () => {
   const [recipientAddress, setRecipientAddress] = useState<string>('');
   const [currency, setCurrency] = useState<'USD' | 'ARS'>('USD');
   const { toast } = useToast();
+  const { t } = useLanguage();
   
   // Mock user data
   const juventudBalance = 450;
@@ -128,11 +131,9 @@ const QRPaymentBenefit: React.FC = () => {
     <Card className="border-border/50 glass-card">
       <CardHeader>
         <CardTitle className="flex items-center text-xl">
-          <QrCode className="mr-3 h-6 w-6 text-green-500" />
-          Pago con QR y Transferencia JUVENTUD
+          <QrCode className="mr-3 h-6 w-6 text-green-500" />{t('qr-title')}
         </CardTitle>
-        <CardDescription>
-          Usa tus tokens JUVENTUD para obtener descuentos al pagar con QR o transferir a otros usuarios
+        <CardDescription>{t('qr-subtile')}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -141,10 +142,10 @@ const QRPaymentBenefit: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Coins className="h-5 w-5 text-purple-500" />
-              <span className="font-medium">Saldo JUVENTUD</span>
+              <span className="font-medium">{t('qr-balance')}</span>
             </div>
             <Badge className="bg-gradient-to-r from-blue-500 to-purple-500">
-              {juventudBalance.toLocaleString()} Tokens
+              {juventudBalance.toLocaleString()} tokens
             </Badge>
           </div>
           
@@ -152,10 +153,10 @@ const QRPaymentBenefit: React.FC = () => {
           <div className="bg-gradient-to-r from-green-50 to-blue-50 p-3 rounded-lg border border-green-200">
             <div className="flex items-center gap-2 mb-2">
               <DollarSign className="h-4 w-4 text-green-600" />
-              <span className="text-sm font-medium text-green-700">Ejemplo de Valor</span>
+              <span className="text-sm font-medium text-green-700">{t('qr-equals')}</span>
             </div>
             <p className="text-sm text-green-600">
-              Tus {juventudBalance} tokens JUVENTUD equivalen a:
+              {t('qr-equals-yours')} {juventudBalance} {t('qr-equals-total')}:
             </p>
             <div className="mt-2 space-y-1">
               <p className="text-sm font-bold text-green-700">
@@ -166,7 +167,7 @@ const QRPaymentBenefit: React.FC = () => {
               </p>
             </div>
             <p className="text-xs text-green-500 mt-2">
-              (1 token JUVENTUD = ${tokenValue} USD = ${(tokenValue * usdToPesos).toLocaleString()} ARS)
+              (1 {t('qr-equals-last')} = ${tokenValue} USD = ${(tokenValue * usdToPesos).toLocaleString()} ARS)
             </p>
           </div>
         </div>
