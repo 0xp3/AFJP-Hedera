@@ -407,19 +407,19 @@ const QRPaymentBenefit: React.FC = () => {
         
         {/* Benefits List */}
         <div className="border-t pt-4">
-          <h4 className="font-medium mb-3">{t('benefits-title')}Beneficios de los Tokens JUVENTUD</h4>
+          <h4 className="font-medium mb-3">{t('benefits-title')}</h4>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
-              <Badge className="bg-green-100 text-green-700">{t('benefits-div-first')}QR Payments</Badge>
-              <span>{t('benefits-div-first-span')}Descuentos automáticos del 10% al 25%</span>
+              <Badge className="bg-green-100 text-green-700">{t('benefits-div-first')}</Badge>
+              <span>{t('benefits-div-first-span')}</span>
             </li>
             <li className="flex items-center gap-2">
-              <Badge className="bg-blue-100 text-blue-700">{t('benefits-div-second')}Transferencias</Badge>
-              <span>{t('benefits-div-second-span')}Envío instantáneo a otros usuarios</span>
+              <Badge className="bg-blue-100 text-blue-700">{t('benefits-div-second')}</Badge>
+              <span>{t('benefits-div-second-span')}</span>
             </li>
             <li className="flex items-center gap-2">
-              <Badge className="bg-purple-100 text-purple-700">{t('benefits-div-third')}Seguridad</Badge>
-              <span>{t('benefits-div-third-span')}Transacciones protegidas por blockchain</span>
+              <Badge className="bg-purple-100 text-purple-700">{t('benefits-div-third')}</Badge>
+              <span>{t('benefits-div-third-span')}</span>
             </li>
           </ul>
         </div>
