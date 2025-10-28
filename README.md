@@ -101,7 +101,7 @@ AFJP Cripto presents an innovative model for a retirement system using blockchai
 
 ### Blockchain
 - **Platform**: Hedera Blockchain
-- **Language**: Move
+- **Language**: Solidity
 - **Development**: Hedera CLI
 - **Testing**: Move unit tests
 - **Deployment**: Hedera devnet/mainnet
@@ -119,17 +119,17 @@ AFJP Cripto presents an innovative model for a retirement system using blockchai
 ## Smart Contract Architecture
 
 ### Core Token Contracts
-- **1. AFJP Token** (`afjp_token.move`)
-- **2. Juventud Token** (`juventud_token.move`)
-- **3. Ladrillo Token** (`ladrillo_token.move`)
+- **1. AFJP Token** (`afjp_token.sol`)
+- **2. Juventud Token** (`juventud_token.sol`)
+- **3. Ladrillo Token** (`ladrillo_token.sol`)
 
 ### Supporting Contracts
-- **4. Vesting Contract** (`afjp_vesting.move`)
-- **5. Staking Contract** (`afjp_staking.move`)
-- **6. Lending Contract** (`afjp_lending.move`)
-- **7. Inheritance Contract** (`afjp_inheritance.move`)
-- **8. Property Manager** (`property_manager.move`)
-- **9. Anti-Whale contract** (`anti-whale.move`)
+- **4. Vesting Contract** (`afjp_vesting.sol`)
+- **5. Staking Contract** (`afjp_staking.sol`)
+- **6. Lending Contract** (`afjp_lending.sol`)
+- **7. Inheritance Contract** (`afjp_inheritance.sol`)
+- **8. Property Manager** (`property_manager.sol`)
+- **9. Anti-Whale contract** (`anti-whale.sol`)
 
 
 ## Development & Deployment
@@ -237,7 +237,7 @@ AFJP Cripto presenta un modelo innovador de sistema de jubilación que utiliza t
 
 ### Blockchain
 - **Plataforma**: Hedera Blockchain
-- **Lenguaje**: Move
+- **Lenguaje**: Solidity
 - **Desarrollo**: Hedera CLI
 - **Pruebas**: Tests unitarios Move
 - **Despliegue**: devnet/mainnet Hedera
@@ -254,17 +254,17 @@ AFJP Cripto presenta un modelo innovador de sistema de jubilación que utiliza t
 ## Arquitectura de contratos inteligentes
 
 ### Contratos de tokens principales
-- 1. Token AFJP (`afjp_token.move`)
-- 2. Token Juventud (`juventud_token.move`)
-- 3. Token Ladrillo (`ladrillo_token.move`)
+- 1. Token AFJP (`afjp_token.sol`)
+- 2. Token Juventud (`juventud_token.sol`)
+- 3. Token Ladrillo (`ladrillo_token.sol`)
 
 ### Contratos de soporte
-- 4. Contrato de vesting (`afjp_vesting.move`)
-- 5. Contrato de staking (`afjp_staking.move`)
-- 6. Contrato de préstamos (`afjp_lending.move`)
-- 7. Contrato de herencia (`afjp_inheritance.move`)
-- 8. Property Manager (`property_manager.move`)
-- 9. Contrato Anti-Whale (`anti-whale.move`)
+- 4. Contrato de vesting (`afjp_vesting.sol`)
+- 5. Contrato de staking (`afjp_staking.sol`)
+- 6. Contrato de préstamos (`afjp_lending.sol`)
+- 7. Contrato de herencia (`afjp_inheritance.sol`)
+- 8. Property Manager (`property_manager.sol`)
+- 9. Contrato Anti-Whale (`anti-whale.sol`)
 
 ## Desarrollo y despliegue
 
