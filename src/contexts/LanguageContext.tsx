@@ -214,8 +214,13 @@ const translations = {
     'health.applied-discount': 'Applied discount',
     'health.final-price': 'Final price',
     'health.simulator-note': 'This is a simulation. Actual discounts may vary based on pharmacy partnerships and availability.',
-
-    
+    'qr-subtile': 'Use your JUVENTUD tokens to get discounts when paying with QR or transfer them to other users',
+    'qr-title': 'QR payment and JUVENTUD transfer',
+    'qr-balance': 'JUVENTUD Balance',
+    'qr-equals': 'Dollar equivalence',
+    'qr-equals-yours': 'Your', 
+    'qr-equals-total': 'JUVENTUD tokens equal to',
+    'qr-equals-last': 'JUVENTUD token',
     // Pitch Section
     'pitch.title': 'Why AFJP Cripto will revolutionize retirement',
     'pitch.subtitle': 'We are not just another retirement fund. We are the solution the world needs.',
@@ -541,7 +546,15 @@ const translations = {
     'health.applied-discount': 'Descuento aplicado',
     'health.final-price': 'Precio final',
     'health.simulator-note': 'Esta es una simulación. Los descuentos reales pueden variar según las alianzas con farmacias y disponibilidad.',
+    'qr-subtile': 'Usa tus tokens JUVENTUD para obtener descuentos al pagar con QR o transferilos a otros usuarios',
+    'qr-title': 'Pago con QR y transferencia JUVENTUD',
+    'qr-balance': 'Saldo JUVENTUD',
+    'qr-equals': 'Equivalencia en dólares',
+    'qr-equals-yours': 'Tus',
+    'qr-equals-total': 'tokens JUVENTUD equivalen a',
+    'qr-equals-last': 'token JUVENTUD',
     
+
     // Pitch Section
     'pitch.title': 'Why AFJP Cripto will revolutionize retirement',
     'pitch.subtitle': 'We are not just another retirement fund. We are the solution the world needs.',
