@@ -221,6 +221,11 @@ const translations = {
     'qr-equals-yours': 'Your', 
     'qr-equals-total': 'JUVENTUD tokens equal to',
     'qr-equals-last': 'JUVENTUD token',
+    'qr-pay': 'Pay with QR',
+    'qr-transfer': 'Transfer',
+    'qr-token': 'Currency for display',
+    'qr-amount': 'Amount to pay',
+    'qr-equals-final': 'Equals',
     // Pitch Section
     'pitch.title': 'Why AFJP Cripto will revolutionize retirement',
     'pitch.subtitle': 'We are not just another retirement fund. We are the solution the world needs.',
@@ -553,7 +558,11 @@ const translations = {
     'qr-equals-yours': 'Tus',
     'qr-equals-total': 'tokens JUVENTUD equivalen a',
     'qr-equals-last': 'token JUVENTUD',
-    
+    'qr-pay': 'Pagar con QR',
+    'qr-transfer': 'Transferir',
+    'qr-token': 'Moneda para visualización',
+    'qr-amount': 'Monto a pagar',
+    'qr-equals-final': 'Equivale a',
 
     // Pitch Section
     'pitch.title': 'Why AFJP Cripto will revolutionize retirement',
